@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google" content="notraslate">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Kawaguchi-Shokudo">
+    <meta name="description" content="">
+
+    <title>川口食堂</title>
+    <link rel="icon" href="../image/favicon.png">
+
+    <!-- GoogleFont -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/destyle.css@3.0.2/destyle.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="../script/index.js"></script>
+    <script src="../script/utils.js"></script>
+  </head>
+  <body>
+    <svg width="0" height="0">
+      <clipPath id="noren-fold" clipPathUnits="objectBoundingBox">
+        <path d="M0,0 Q0.2,0.4 1,0.6 Q0.7,0.9 0.9 1 L0,1 Z" />
+      </clipPath>
+
+      <!-- ﾃｷｽﾄの上の隙間を加味し 16px 確保、ﾃｷｽﾄの左には隙間がないので 24px 確保 -->
+      <clippath id="about-img-overlap-r">
+        <path d="M0,0 L720,0 L720,308 A16 16 0 0 1 704,324 L392,324 A16 16 0 0 0 376,340 L376,384 A16 16 0 0 1 360,400 L0,400 Z"></path>
+      </clippath>
+
+      <!-- ﾃｷｽﾄの上の隙間を加味し 16px 確保、ﾃｷｽﾄの右の隙間を加味し 8px 確保 -->
+      <clippath id="about-img-overlap-l">
+        <path d="M0,0 L720,0 L720,400 L344,400 A16 16 0 0 1 328,384 L328,340 A16 16 0 0 0 312,324 L16,324 A16 16 0 0 1 0,308 Z "></path>
+      </clippath>
+    </svg>
+    
+    <header>
+      <nav>
+        <ul class="noren js-noren">
+          <li class="noren__item js-noren__item" data-article="about">
+            <div class="noren__front">
+              <div class="noren__icon-label">
+                <img class="noren__icon" src="../image/logo-color.png" loading="eager">
+              </div>
+              <div class="noren__back"></div>
+            </div>
+          </li>
+          <li class="noren__item js-noren__item" data-article="menu">
+            <div class="noren__front">
+              <div class="noren__icon-label">
+                <img class="noren__icon" src="../image/icon-menu.webp" loading="eager">
+                <p class="noren__label">メニュー</p>
+              </div>
+              <div class="noren__back"></div>
+            </div>
+          </li>
+          <li class="noren__item js-noren__item" data-article="inside">
+            <div class="noren__front">
+              <div class="noren__icon-label">
+                <img class="noren__icon" src="../image/icon-inside.webp" loading="eager">
+                <p class="noren__label">店内の紹介</p>
+              </div>
+              <div class="noren__back"></div>
+            </div>
+          </li>
+          <li class="noren__item js-noren__item" data-article="access">
+            <div class="noren__front">
+              <div class="noren__icon-label">
+                <img class="noren__icon" src="../image/icon-access.webp" loading="eager">
+                <p class="noren__label">アクセス</p>
+              </div>
+              <div class="noren__back"></div>
+            </div>
+          </li>
+          <li class="noren__item bp-min600-show">
+            <div class="noren__front">
+              <div class="noren__icon-label">
+                <img class="noren__icon" src="../image/logo-color.png" loading="eager">
+              </div>
+              <div class="noren__back"></div>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div class="main-bg">
+        <div class="content-bg">
+          <div class="content-bg__base"></div>
+          <img class="content-bg__img" src="../image/main-bg/content-bg.webp" loading="eager">
+        </div>
+        <div class="wide-bg bp-min816-show">
+          <img class="wide-bg__img" src="../image/main-bg/wide-bg.webp" loading="eager">
+          <div class="wide-bg__overlay"></div>
+          <div>
+            <img class="wide-bg__graffiti js-drag" src="../image/main-bg/graffiti-01.webp" loading="eager">
+            <img class="wide-bg__graffiti js-drag" src="../image/main-bg/graffiti-02.webp" loading="eager">
+            <img class="wide-bg__graffiti js-drag" src="../image/main-bg/graffiti-03.webp" loading="eager">
+          </div>
+        </div>
+      </div>
+      
+      <div class="modal js-modal">
+        <div class="modal__bg js-modal__bg"></div>
+        <div class="modal__base">
+          <div class="modal__close-btn js-modal__close-btn">
+            <div class="modal__close-btn__inner js-modal__close-btn__inner"></div>
+          </div>
+          <ul class="modal__wrapper js-modal__wrapper">
+          </ul>
+        </div>
+      </div>
+
+      <div class="container">
+        <article class="article top js-article" data-article="top">
+          <div class="mv">
+            <img class="mv__img" src="../image/mv.webp" loading="eager">
+            <div class="c-noise"></div>
+          </div>
+          <h1 class="cp">愛され続けて<span class="horizontal">30</span>年</h1>
+          <img class="board" src="../image/board.webp" loading="eager">
+        </article>
+
+        <article class="article about js-article" data-article="about">
+          <div class="c-banner">
+            <div class="c-banner__icon-label">
+              <img class="c-banner__icon" src="../image/icon-banner.webp" loading="lazy">
+              <h2 class="c-banner__label">当店について</h2>
+            </div>
+            <div class="c-banner__bg">
+              <img class="c-banner__img" src="../image/about/about-01.webp" loading="lazy">
+              <div class="c-banner__mask"></div>
+              <div class="c-noise"></div>
+            </div>
+            <div class="c-banner__effect js-observer"></div>
+          </div>
+          <section class="section">
+            <div class="content">
+              <img class="content__img" src="../image/about/about-01.webp" loading="lazy">
+              <p class="content__text">
+                ふわりと漂う湯気と香ばしい匂いのお出迎え。<br>  
+                そこは、誰もが帰ってこられるみんなの食卓。<br>
+                自然の落ち着きとカフェのくつろぎを備え、定食屋として人々の暮らしに寄り添い続けてきた。
+              </p>
+            </div>
+            <div class="content">
+              <img class="content__img" src="../image/about/about-02.webp" loading="lazy">
+              <p class="content__text">
+                旬の野菜が並ぶ厨房、炊き立てのご飯の音、「おかえり」と言いたくなる温かな空気。<br>
+                ここで過ごす時間は、あなたの日常を少しだけ特別にしてくれる。  
+              </p>
+            </div>
+            <div class="content">
+              <p class="content__text">
+                食事は人をつなぎ、心を満たすもの。<br>その想いを胸に、今日も私たちは一皿一皿を丁寧に重ねている。
+              </p>
+            </div>
+          </section>
+        </article>
+
+        <article class="article menu js-article" data-article="menu">
+          <div class="c-banner">
+            <div class="c-banner__icon-label">
+              <img class="c-banner__icon" src="../image/icon-menu.webp" loading="lazy">
+              <h2 class="c-banner__label">メニュー</h2>
+            </div>
+            <div class="c-banner__bg">
+              <img class="c-banner__img" src="../image/menu/set-01.webp" loading="lazy">
+              <div class="c-banner__mask"></div>
+              <div class="c-noise"></div>
+            </div>
+            <div class="c-banner__effect js-observer"></div>
+          </div>
+          <div class="wrapper">
+            <section class="section">
+              <h3 class="c-section-title">定食</h3>
+              <ul class="menu">
+                <li class="menu__item js-menu__item" data-menu="set-ix01">
+                  <div class="content">
+                    <div class="menu__frame">
+                      <img class="menu__img" src="../image/menu/set-01.webp" loading="lazy">
+                    </div>
+                    <div class="menu__info">
+                      <p class="menu__name">豚の生姜焼き定食</p>
+                      <p class="menu__fee">900</p>
+                    </div>
+                  </div>
+                  <div class="js-copy-source" style="display:none">
+                    <p class="modal__name">豚の生姜焼き定食</p>
+                    <img class="modal__img" src="../image/menu/set-01.webp" loading="lazy">
+                    <div class="modal__info">
+                      <p class="modal__fee">900</p>
+                      <p class="modal__wait">10</p>
+                      <p class="modal__summary">
+                        <span class="bp-min816-hide">自家製のタレで香ばしく焼いた豚肉で、ご飯がすすむ定番定食です</span>
+                        <span class="bp-min816-show">自家製タレで香ばしく焼いた豚肉は、生姜の風味が食欲をそそり、ご飯がすすむ定番の一品です</span>
+                      </p>
+                    </div>
+                  </div>
+                </li>
+                <li class="menu__item js-menu__item" data-menu="set-ix02">
+                  <div class="content">
+                    <div class="menu__frame">
+                      <img class="menu__img" src="../image/menu/set-02.webp" loading="lazy">
+                    </div>
+                    <div class="menu__info">
+                      <p class="menu__name">彩り豊かな野菜定食</p>
+                      <p class="menu__fee">800</p>
+                    </div>
+                  </div>
+                  <div class="js-copy-source" style="display:none">
+                    <p class="modal__name">彩り豊かな野菜定食</p>
+                    <img class="modal__img" src="../image/menu/set-02.webp" loading="lazy">
+                    <div class="modal__info">
+                      <p class="modal__fee">800</p>
+                      <p class="modal__wait">10</p>
+                      <p class="modal__summary">
+                        <span class="bp-min816-hide">彩り豊かな旬の野菜を盛り合わせ、栄養満点の定番定食です</span>
+                        <span class="bp-min816-show">彩り豊かな旬の野菜をふんだんに盛り合わせ、栄養満点で心も体も満たされる定番の野菜定食です</span>
+                      </p>
+                    </div>
+                  </div>
+                </li>
+                <li class="menu__item js-menu__item" data-menu="set-ix03">
+                  <div class="content">
+                    <div class="menu__frame">
+                      <img class="menu__img" src="../image/menu/set-03.webp" loading="lazy">
+                    </div>
+                    <div class="menu__info">
+                      <p class="menu__name">鯖の味噌煮定食</p>
+                      <p class="menu__fee">800</p>
+                    </div>
+                  </div>
+                  <div class="js-copy-source" style="display:none">
+                    <p class="modal__name">鯖の味噌煮定食</p>
+                    <img class="modal__img" src="../image/menu/set-03.webp" loading="lazy">
+                    <div class="modal__info">
+                      <p class="modal__fee">800</p>
+                      <p class="modal__wait">10</p>
+                      <p class="modal__summary">
+                        <span class="bp-min816-hide">脂ののった鯖を甘辛味噌で煮込み、ご飯がすすむ定番定食です</span>
+                        <span class="bp-min816-show">脂ののった鯖をじっくり甘辛味噌で煮込み、旨みたっぷりでご飯がすすむ、心も満たされる定番の鯖味噌煮定食です</span>
+                      </p>
+                    </div>
+                  </div>
+                </li>
+                <li class="menu__item js-menu__item" data-menu="set-ix04">
+                  <div class="content">
+                    <div class="menu__frame">
+                      <img class="menu__img" src="../image/menu/set-04.webp" loading="lazy">
+                    </div>
+                    <div class="menu__info">
+                      <p class="menu__name">秋刀魚定食</p>
+                      <p class="menu__fee">800</p>
+                    </div>
+                  </div>
+                  <div class="js-copy-source" style="display:none">
+                    <p class="modal__name">秋刀魚定食</p>
+                    <img class="modal__img" src="../image/menu/set-04.webp" loading="lazy">
+                    <div class="modal__info">
+                      <p class="modal__fee">800</p>
+                      <p class="modal__wait">10</p>
+                      <p class="modal__summary">
+                        <span class="bp-min816-hide">脂ののった秋刀魚を香ばしく焼き上げ、ご飯がすすむ定番定食です</span>
+                        <span class="bp-min816-show">脂ののった秋刀魚を香ばしく焼き上げ、旬の旨みを存分に味わえる、ご飯がすすむ満足の定番定食です</span>
+                      </p>
+                    </div>
+                  </div>
+                </li>
+                <li class="menu__item js-menu__item" data-menu="set-ix05">
+                  <div class="c-popular"></div>
+                  <div class="content">
+                    <div class="menu__frame">
+                      <img class="menu__img" src="../image/menu/set-05.webp" loading="lazy">
+                    </div>
+                    <div class="menu__info">
+                      <p class="menu__name">とんかつ定食（ロース）</p>
+                      <p class="menu__fee">900</p>
+                    </div>
+                  </div>
+                  <div class="js-copy-source" style="display:none">
+                    <p class="modal__name">とんかつ定食（ロース）</p>
+                    <img class="modal__img" src="../image/menu/set-05.webp" loading="lazy">
+                    <div class="modal__info">
+                      <p class="modal__fee">900</p>
+                      <p class="modal__wait">15</p>
+                      <p class="modal__summary">
+                        <span class="bp-min816-hide">ジューシーなロースとんかつを揚げた、ご飯がすすむ定番定食です</span>
+                        <span class="bp-min816-show">ジューシーなロースとんかつを香ばしく揚げ、サクサク衣と旨みでご飯がすすむ、満足感たっぷりの定番定食です</span>
+                      </p>
+                    </div>
+                  </div>
+                </li>
+                <li class="menu__item js-menu__item" data-menu="set-ix06">
+                  <div class="content">
+                    <div class="menu__frame">
+                      <img class="menu__img" src="../image/menu/set-06.webp" loading="lazy">
+                    </div>
+                    <div class="menu__info">
+                      <p class="menu__name">健康サラダのそば定食</p>
+                      <p class="menu__fee">800</p>
+                    </div>
+                  </div>
+                  <div class="js-copy-source" style="display:none">
+                    <p class="modal__name">健康サラダのそば定食</p>
+                    <img class="modal__img" src="../image/menu/set-06.webp" loading="lazy">
+                    <div class="modal__info">
+                      <p class="modal__fee">800</p>
+                      <p class="modal__wait">10</p>
+                      <p class="modal__summary">
+                        <span class="bp-min816-hide">新鮮野菜のサラダとそばを組み合わせた、ヘルシーな定食です</span>
+                        <span class="bp-min816-show">シャキシャキ野菜のサラダと香り高いそばを組み合わせ、栄養バランス抜群で心も体も満たされる健康定食です</span>
+                      </p>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </section>
+            <section class="section">
+              <h3 class="c-section-title">単品</h3>
+              <ul class="menu">
+                <li class="menu__item js-menu__item" data-menu="single-ix01">
+                  <div class="c-popular"></div>
+                  <div class="content">
+                    <div class="menu__frame">
+                      <img class="menu__img" src="../image/menu/single-01.webp" loading="lazy">
+                    </div>
+                    <div class="menu__info">
+                      <p class="menu__name">タルタルたっぷりチキン南蛮</p>
+                      <p class="menu__fee">500</p>
+                    </div>
+                  </div>
+                  <div class="js-copy-source" style="display:none">
+                    <p class="modal__name">タルタルたっぷりチキン南蛮</p>
+                    <img class="modal__img" src="../image/menu/single-01.webp" loading="lazy">
+                    <div class="modal__info">
+                      <p class="modal__fee">500</p>
+                      <p class="modal__wait">10</p>
+                      <p class="modal__summary">
+                        <span class="bp-min816-hide">甘酢に絡めたチキンに濃厚タルタルを添えた人気の一品です</span>
+                        <span class="bp-min816-show">甘酢に絡めたジューシーなチキンに、たっぷり濃厚タルタルを添え、食欲をそそる満足感抜群の人気メニューです</span>
+                      </p>
+                    </div>
+                  </div>
+                </li>
+                <li class="menu__item js-menu__item" data-menu="single-ix02">
+                  <div class="content">
+                    <div class="menu__frame">
+                      <img class="menu__img" src="../image/menu/single-02.webp" loading="lazy">
+                    </div>
+                    <div class="menu__info">
+                      <p class="menu__name">豚キムチ</p>
+                      <p class="menu__fee">300</p>
+                    </div>
+                  </div>
+                  <div class="js-copy-source" style="display:none">
+                    <p class="modal__name">豚キムチ</p>
+                    <img class="modal__img" src="../image/menu/single-02.webp" loading="lazy">
+                    <div class="modal__info">
+                      <p class="modal__fee">300</p>
+                      <p class="modal__wait">10</p>
+                      <p class="modal__summary">
+                        <span class="bp-min816-hide">豚肉とキムチを炒めた、ピリ辛でご飯がすすむ一品です</span>
+                        <span class="bp-min816-show">旨みたっぷりの豚肉とキムチを香ばしく炒め、ピリ辛風味で食欲をそそる、ご飯がすすむ人気の一品です</span>
+                      </p>
+                    </div>
+                  </div>
+                </li>
+                <li class="menu__item js-menu__item" data-menu="single-ix03">
+                  <div class="content">
+                    <div class="menu__frame">
+                      <img class="menu__img" src="../image/menu/single-03.webp" loading="lazy">
+                    </div>
+                    <div class="menu__info">
+                      <p class="menu__name">温泉卵のハンバーグシチュー</p>
+                      <p class="menu__fee">500</p>
+                    </div>
+                  </div>
+                  <div class="js-copy-source" style="display:none">
+                    <p class="modal__name">温泉卵のハンバーグシチュー</p>
+                    <img class="modal__img" src="../image/menu/single-03.webp" loading="lazy">
+                    <div class="modal__info">
+                      <p class="modal__fee">500</p>
+                      <p class="modal__wait">15</p>
+                      <p class="modal__summary">
+                        <span class="bp-min816-hide">濃厚シチューに温泉卵を添えた、まろやか味わいのハンバーグです</span>
+                        <span class="bp-min816-show">じっくり煮込んだ濃厚シチューに温泉卵を添え、まろやかでコク深い味わいを楽しめる満足感たっぷりのハンバーグです</span>
+                      </p>
+                    </div>
+                  </div>
+                </li>
+                <li class="menu__item js-menu__item" data-menu="single-ix04">
+                  <div class="content">
+                    <div class="menu__frame">
+                      <img class="menu__img" src="../image/menu/single-04.webp" loading="lazy">
+                    </div>
+                    <div class="menu__info">
+                      <p class="menu__name">酢豚</p>
+                      <p class="menu__fee">400</p>
+                    </div>
+                  </div>
+                  <div class="js-copy-source" style="display:none">
+                    <p class="modal__name">酢豚</p>
+                    <img class="modal__img" src="../image/menu/single-04.webp" loading="lazy">
+                    <div class="modal__info">
+                      <p class="modal__fee">400</p>
+                      <p class="modal__wait">10</p>
+                      <p class="modal__summary">
+                        <span class="bp-min816-hide">豚肉と野菜を甘酢あんで絡めた、彩り豊かな人気の一品です</span>
+                        <span class="bp-min816-show">ジューシーな豚肉と彩り豊かな野菜を甘酢あんで絡め、酸味と甘みの絶妙なバランスで食欲をそそる定番の中華料理です</span>
+                      </p>
+                    </div>
+                  </div>
+                </li>
+                <li class="menu__item js-menu__item" data-menu="single-ix05">
+                  <div class="content">
+                    <div class="menu__frame">
+                      <img class="menu__img" src="../image/menu/single-05.webp" loading="lazy">
+                    </div>
+                    <div class="menu__info">
+                      <p class="menu__name">ポテトサラダ</p>
+                      <p class="menu__fee">300</p>
+                    </div>
+                  </div>
+                  <div class="js-copy-source" style="display:none">
+                    <p class="modal__name">ポテトサラダ</p>
+                    <img class="modal__img" src="../image/menu/single-05.webp" loading="lazy">
+                    <div class="modal__info">
+                      <p class="modal__fee">300</p>
+                      <p class="modal__wait">5</p>
+                      <p class="modal__summary">
+                        <span class="bp-min816-hide">ほくほくじゃがいもに野菜を合わせた、やさしい味わいの一品です</span>
+                        <span class="bp-min816-show">ほくほくのじゃがいもに彩り野菜を合わせ、まろやかな風味で食卓を彩る、定番人気のポテトサラダです</span>
+                      </p>
+                    </div>
+                  </div>
+                </li>
+                <li class="menu__item js-menu__item" data-menu="single-ix06">
+                  <div class="content">
+                    <div class="menu__frame">
+                      <img class="menu__img" src="../image/menu/single-06.webp" loading="lazy">
+                    </div>
+                    <div class="menu__info">
+                      <p class="menu__name">若鶏の竜田揚げ</p>
+                      <p class="menu__fee">500</p>
+                    </div>
+                  </div>
+                  <div class="js-copy-source" style="display:none">
+                    <p class="modal__name">若鶏の竜田揚げ</p>
+                    <img class="modal__img" src="../image/menu/single-06.webp" loading="lazy">
+                    <div class="modal__info">
+                      <p class="modal__fee">500</p>
+                      <p class="modal__wait">15</p>
+                      <p class="modal__summary">
+                        <span class="bp-min816-hide">醤油だれに漬け込んだ若鶏を香ばしく揚げた、人気の一品です</span>
+                        <span class="bp-min816-show">醤油だれにじっくり漬け込んだ若鶏を香ばしく揚げ、外はカリッと中はジューシーな食感で、ご飯にぴったりな定番の一品です</span>
+                      </p>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </section>
+            <section class="section">
+              <h3 class="c-section-title">ドリンク</h3>
+              <ul class="menu">
+                <li class="menu__item js-menu__item" data-menu="drink-ix01">
+                  <div class="c-popular"></div>
+                  <div class="content">
+                    <div class="menu__frame">
+                      <img class="menu__img" src="../image/menu/drink-01.webp" loading="lazy">
+                    </div>
+                    <div class="menu__info">
+                      <p class="menu__name">カフェラテ</p>
+                      <p class="menu__fee">300</p>
+                    </div>
+                  </div>
+                  <div class="js-copy-source" style="display:none">
+                    <p class="modal__name">カフェラテ</p>
+                    <img class="modal__img" src="../image/menu/drink-01.webp" loading="lazy">
+                    <div class="modal__info">
+                      <p class="modal__fee">300</p>
+                      <p class="modal__wait">5</p>
+                      <p class="modal__summary">
+                        <span class="bp-min816-hide">香り高いエスプレッソにミルクを合わせた、やさしい味わいの一杯です</span>
+                        <span class="bp-min816-show">香り高いエスプレッソにたっぷりミルクを合わせ、まろやかで飲みやすく、心をほっと癒す定番人気のカフェラテです</span>
+                      </p>
+                    </div>
+                  </div>
+                </li>
+                <li class="menu__item js-menu__item" data-menu="drink-ix02">
+                  <div class="content">
+                    <div class="menu__frame">
+                      <img class="menu__img" src="../image/menu/drink-02.webp" loading="lazy">
+                    </div>
+                    <div class="menu__info">
+                      <p class="menu__name">抹茶ラテ</p>
+                      <p class="menu__fee">300</p>
+                    </div>
+                  </div>
+                  <div class="js-copy-source" style="display:none">
+                    <p class="modal__name">抹茶ラテ</p>
+                    <img class="modal__img" src="../image/menu/drink-02.webp" loading="lazy">
+                    <div class="modal__info">
+                      <p class="modal__fee">300</p>
+                      <p class="modal__wait">5</p>
+                      <p class="modal__summary">
+                        <span class="bp-min816-hide">香り豊かな抹茶にミルクを合わせた、まろやかで癒される一杯です</span>
+                        <span class="bp-min816-show">香り豊かな抹茶にたっぷりミルクを合わせ、まろやかで飲みやすく、心を落ち着けて癒してくれる人気の抹茶ラテです</span>
+                      </p>
+                    </div>
+                  </div>
+                </li>
+                <li class="menu__item js-menu__item" data-menu="drink-ix03">
+                  <div class="content">
+                    <div class="menu__frame">
+                      <img class="menu__img" src="../image/menu/drink-03.webp" loading="lazy">
+                    </div>
+                    <div class="menu__info">
+                      <p class="menu__name">新鮮な果物とジュース</p>
+                      <p class="menu__fee">300</p>
+                    </div>
+                  </div>
+                  <div class="js-copy-source" style="display:none">
+                    <p class="modal__name">新鮮な果物とジュース</p>
+                    <img class="modal__img" src="../image/menu/drink-03.webp" loading="lazy">
+                    <div class="modal__info">
+                      <p class="modal__fee">300</p>
+                      <p class="modal__wait">3</p>
+                      <p class="modal__summary">
+                        <span class="bp-min816-hide">旬の果物を使った、爽やかで自然な甘みが楽しめるジュースです</span>
+                        <span class="bp-min816-show">旬の果物を贅沢に使ったジュースは、爽やかな香りと自然な甘みが広がり、心も体もリフレッシュできる一杯です</span>
+                      </p>
+                    </div>
+                  </div>
+                </li>
+                <li class="menu__item js-menu__item" data-menu="drink-ix04">
+                  <div class="content">
+                    <div class="menu__frame">
+                      <img class="menu__img" src="../image/menu/drink-04.webp" loading="lazy">
+                    </div>
+                    <div class="menu__info">
+                      <p class="menu__name">お茶</p>
+                      <p class="menu__fee">100</p>
+                    </div>
+                  </div>
+                  <div class="js-copy-source" style="display:none">
+                    <p class="modal__name">お茶</p>
+                    <img class="modal__img" src="../image/menu/drink-04.webp" loading="lazy">
+                    <div class="modal__info">
+                      <p class="modal__fee">100</p>
+                      <p class="modal__wait">3</p>
+                      <p class="modal__summary">
+                        <span class="bp-min816-hide">香り豊かでさっぱりとした味わい、食事に寄り添う定番のお茶です</span>
+                        <span class="bp-min816-show">香り豊かでさっぱりとした味わいのお茶は、食事を引き立て心を落ち着ける、定番の一杯です</span>
+                      </p>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </section>
+            <section class="section">
+              <h3 class="c-section-title">デザート</h3>
+              <ul class="menu">
+                <li class="menu__item js-menu__item" data-menu="dessert-ix01">
+                  <div class="content">
+                    <div class="menu__frame">
+                      <img class="menu__img" src="../image/menu/dessert-01.webp" loading="lazy">
+                    </div>
+                    <div class="menu__info">
+                      <p class="menu__name">あんみつ</p>
+                      <p class="menu__fee">300</p>
+                    </div>
+                  </div>
+                  <div class="js-copy-source" style="display:none">
+                    <p class="modal__name">あんみつ</p>
+                    <img class="modal__img" src="../image/menu/dessert-01.webp" loading="lazy">
+                    <div class="modal__info">
+                      <p class="modal__fee">300</p>
+                      <p class="modal__wait">5</p>
+                      <p class="modal__summary">
+                        <span class="bp-min816-hide">寒天にあんこや果物を添えた、甘さと彩りを楽しめるデザートです</span>
+                        <span class="bp-min816-show">ぷるんとした寒天にあんこや果物を添え、やさしい甘さと彩り豊かな見た目で、心も満たされる定番の和スイーツです</span>
+                      </p>
+                    </div>
+                  </div>
+                </li>
+                <li class="menu__item js-menu__item" data-menu="dessert-ix02">
+                  <div class="content">
+                    <div class="menu__frame">
+                      <img class="menu__img" src="../image/menu/dessert-02.webp" loading="lazy">
+                    </div>
+                    <div class="menu__info">
+                      <p class="menu__name">プリン</p>
+                      <p class="menu__fee">300</p>
+                    </div>
+                  </div>
+                  <div class="js-copy-source" style="display:none">
+                    <p class="modal__name">プリン</p>
+                    <img class="modal__img" src="../image/menu/dessert-02.webp" loading="lazy">
+                    <div class="modal__info">
+                      <p class="modal__fee">300</p>
+                      <p class="modal__wait">10</p>
+                      <p class="modal__summary">
+                        <span class="bp-min816-hide">なめらかな口どけとやさしい甘さが魅力の、定番人気デザートです</span>
+                        <span class="bp-min816-show">なめらかな口どけとやさしい甘さが広がるプリンは、世代を問わず愛される定番人気のデザートです</span>
+                      </p>
+                    </div>
+                  </div>
+                </li>
+                <li class="menu__item js-menu__item" data-menu="dessert-ix03">
+                  <div class="content">
+                    <div class="menu__frame">
+                      <img class="menu__img" src="../image/menu/dessert-03.webp" loading="lazy">
+                    </div>
+                    <div class="menu__info">
+                      <p class="menu__name">フレンチトースト・アイスクリーム添え</p>
+                      <p class="menu__fee">400</p>
+                    </div>
+                  </div>
+                  <div class="js-copy-source" style="display:none">
+                    <p class="modal__name">フレンチトースト・アイスクリーム添え</p>
+                    <img class="modal__img" src="../image/menu/dessert-03.webp" loading="lazy">
+                    <div class="modal__info">
+                      <p class="modal__fee">400</p>
+                      <p class="modal__wait">10</p>
+                      <p class="modal__summary">
+                        <span class="bp-min816-hide">ふんわり焼いたトーストに冷たいアイスを添えた贅沢なデザートです</span>
+                        <span class="bp-min816-show">ふんわり焼き上げたフレンチトーストに冷たいアイスを添え、温かさと冷たさの絶妙なハーモニーを楽しめる贅沢なデザートです</span>
+                      </p>
+                    </div>
+                  </div>
+                </li>
+                <li class="menu__item js-menu__item" data-menu="dessert-ix04">
+                  <div class="content">
+                    <div class="menu__frame">
+                      <img class="menu__img" src="../image/menu/dessert-04.webp" loading="lazy">
+                    </div>
+                    <div class="menu__info">
+                      <p class="menu__name">切り餅入りのぜんざい</p>
+                      <p class="menu__fee">300</p>
+                    </div>
+                  </div>
+                  <div class="js-copy-source" style="display:none">
+                    <p class="modal__name">切り餅入りのぜんざい</p>
+                    <img class="modal__img" src="../image/menu/dessert-04.webp" loading="lazy">
+                    <div class="modal__info">
+                      <p class="modal__fee">300</p>
+                      <p class="modal__wait">5</p>
+                      <p class="modal__summary">
+                        <span class="bp-min816-hide">甘い小豆に香ばしい切り餅を添えた、心温まるデザートです</span>
+                        <span class="bp-min816-show">やさしい甘さの小豆に香ばしい切り餅を添え、ほっと心が和む味わいを楽しめる、冬にぴったりの定番和スイーツです</span>
+                      </p>
+                    </div>
+                  </div>
+                </li>
+                <li class="menu__item js-menu__item" data-menu="dessert-ix05">
+                  <div class="content">
+                    <div class="menu__frame">
+                      <img class="menu__img" src="../image/menu/dessert-05.webp" loading="lazy">
+                    </div>
+                    <div class="menu__info">
+                      <p class="menu__name">クリームたっぷりフルーツパンケーキ</p>
+                      <p class="menu__fee">500</p>
+                    </div>
+                  </div>
+                  <div class="js-copy-source" style="display:none">
+                    <p class="modal__name">クリームたっぷりフルーツパンケーキ</p>
+                    <img class="modal__img" src="../image/menu/dessert-05.webp" loading="lazy">
+                    <div class="modal__info">
+                      <p class="modal__fee">500</p>
+                      <p class="modal__wait">15</p>
+                      <p class="modal__summary">
+                        <span class="bp-min816-hide">ふんわりパンケーキに果物とクリームを添えた、華やかなデザートです</span>
+                        <span class="bp-min816-show">ふんわり焼き上げたパンケーキに果物とたっぷりクリームを添え、見た目も味わいも贅沢に楽しめる華やかなデザートです</span>
+                      </p>
+                    </div>
+                  </div>
+                </li>
+                <li class="menu__item js-menu__item" data-menu="dessert-ix06">
+                  <div class="c-popular"></div>
+                  <div class="content">
+                    <div class="menu__frame">
+                      <img class="menu__img" src="../image/menu/dessert-06.webp" loading="lazy">
+                    </div>
+                    <div class="menu__info">
+                      <p class="menu__name">チョコバナナワッフル</p>
+                      <p class="menu__fee">400</p>
+                    </div>
+                  </div>
+                  <div class="js-copy-source" style="display:none">
+                    <p class="modal__name">チョコバナナワッフル</p>
+                    <img class="modal__img" src="../image/menu/dessert-06.webp" loading="lazy">
+                    <div class="modal__info">
+                      <p class="modal__fee">400</p>
+                      <p class="modal__wait">10</p>
+                      <p class="modal__summary">
+                        <span class="bp-min816-hide">香ばしいワッフルにチョコとバナナを添えた、贅沢なデザートです</span>
+                        <span class="bp-min816-show">香ばしく焼き上げたワッフルに濃厚チョコと甘いバナナを添え、見た目も味わいも贅沢に楽しめる人気のデザートです</span>
+                      </p>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </section>
+          </div>
+        </article>
+
+        <article class="article inside js-article" data-article="inside">
+          <div class="c-banner">
+            <div class="c-banner__icon-label">
+              <img class="c-banner__icon" src="../image/icon-inside.webp" loading="lazy">
+              <h2 class="c-banner__label">店内の紹介</h2>
+            </div>
+            <div class="c-banner__bg">
+              <img class="c-banner__img" src="../image/inside/jp-01.webp" loading="lazy">
+              <div class="c-banner__mask"></div>
+              <div class="c-noise"></div>
+            </div>
+            <div class="c-banner__effect js-observer"></div>
+          </div>
+          <section class="section js-section" data-flavor="jp">
+            <h3 class="c-section-title">洋風の空間</h3>
+            <div class="wrapper js-wrapper">
+              <img class="main-img" src="../image/inside/jp-01.webp" loading="lazy">
+              <div class="sub-imgs">
+                <ul class="sub-imgs__slider">
+                  <li class="sub-imgs__slide js-sub-imgs__slide" data-sub-img="jp-ix02">
+                    <img class="sub-imgs__img" src="../image/inside/jp-02.webp" loading="lazy">
+                  </li>
+                  <li class="sub-imgs__slide js-sub-imgs__slide" data-sub-img="jp-ix03">
+                    <img class="sub-imgs__img" src="../image/inside/jp-03.webp" loading="lazy">
+                  </li>
+                  <li class="sub-imgs__slide js-sub-imgs__slide" data-sub-img="jp-ix04">
+                    <img class="sub-imgs__img" src="../image/inside/jp-04.webp" loading="lazy">
+                  </li>
+                </ul>
+                <ul class="sub-imgs__pagenation">
+                  <li class="sub-imgs__dot js-sub-imgs__dot" data-sub-img="jp-ix02">
+                    <div class="sub-imgs__dot-track">
+                      <span class="sub-imgs__dot-fill js-sub-imgs__dot-fill"></span>
+                    </div>
+                  </li>
+                  <li class="sub-imgs__dot js-sub-imgs__dot" data-sub-img="jp-ix03">
+                    <div class="sub-imgs__dot-track">
+                      <span class="sub-imgs__dot-fill js-sub-imgs__dot-fill"></span>
+                    </div>
+                  </li>
+                  <li class="sub-imgs__dot js-sub-imgs__dot" data-sub-img="jp-ix04">
+                    <div class="sub-imgs__dot-track">
+                      <span class="sub-imgs__dot-fill js-sub-imgs__dot-fill"></span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <p class="summary js-min816-move">
+              お店に入って右側にある洋風の空間は、木の温もり漂うくつろぎの場。<!--
+           -->コーヒーの香りに包まれ、軽食や喫茶メニューを気軽に楽しめます。<!--
+           -->街角カフェのような親しみやすさで、ゆったりとした時間を過ごせます。
+            </p>
+          </section>
+          <section class="section js-section">
+            <h3 class="c-section-title">和風の空間</h3>
+            <div class="wrapper js-wrapper">
+              <img class="main-img" src="../image/inside/ws-01.webp" loading="lazy">
+              <div class="sub-imgs">
+                <ul class="sub-imgs__slider">
+                  <li class="sub-imgs__slide js-sub-imgs__slide" data-sub-img="ws-ix02">
+                    <img class="sub-imgs__img" src="../image/inside/ws-02.webp" loading="lazy">
+                  </li>
+                  <li class="sub-imgs__slide js-sub-imgs__slide" data-sub-img="ws-ix03">
+                    <img class="sub-imgs__img" src="../image/inside/ws-03.webp" loading="lazy">
+                  </li>
+                  <li class="sub-imgs__slide js-sub-imgs__slide" data-sub-img="ws-ix04">
+                    <img class="sub-imgs__img" src="../image/inside/ws-04.webp" loading="lazy">
+                  </li>
+                </ul>
+                <ul class="sub-imgs__pagenation">
+                  <li class="sub-imgs__dot js-sub-imgs__dot" data-sub-img="ws-ix02">
+                    <div class="sub-imgs__dot-track">
+                      <span class="sub-imgs__dot-fill js-sub-imgs__dot-fill"></span>
+                    </div>
+                  </li>
+                  <li class="sub-imgs__dot js-sub-imgs__dot" data-sub-img="ws-ix03">
+                    <div class="sub-imgs__dot-track">
+                      <span class="sub-imgs__dot-fill js-sub-imgs__dot-fill"></span>
+                    </div>
+                  </li>
+                  <li class="sub-imgs__dot js-sub-imgs__dot" data-sub-img="ws-ix04">
+                    <div class="sub-imgs__dot-track">
+                      <span class="sub-imgs__dot-fill js-sub-imgs__dot-fill"></span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <p class="summary js-min816-move">
+              お店に入って左側にある和風の空間は、畳と木の質感が心地よい場。<!--
+           -->やわらかな照明に包まれ、和の趣を感じながらお茶や甘味を気軽に楽しめます。<!--
+           -->旅先の茶屋のような親しみやすさで、静かな時間を過ごせます。
+            </p>
+          </section>
+        </article>
+
+        <article class="article access js-article" data-article="access">
+          <div class="c-banner">
+            <div class="c-banner__icon-label">
+              <img class="c-banner__icon" src="../image/icon-access.webp" loading="lazy">
+              <h2 class="c-banner__label">アクセス</h2>
+            </div>
+            <div class="c-banner__bg">
+              <img class="c-banner__img" src="../image/access.webp" loading="lazy">
+              <div class="c-banner__mask"></div>
+              <div class="c-noise"></div>
+            </div>
+            <div class="c-banner__effect js-observer"></div>
+          </div>
+          <div class="wrapper">
+            <iframe class="map"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3197.1631703465728!2d137.0343629525778!3d36.74265430583665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5ff782cd5f8f47db%3A0xe3d1b878159234a9!2z44CSOTMzLTAwMTQg5a-M5bGx55yM6auY5bKh5biC6YeO5p2R77yR77yX77yX4oiS77yS!5e0!3m2!1sja!2sjp!4v1764995693662!5m2!1sja!2sjp"
+              allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+            <dl class="info">
+              <div class="info__row">
+                <dt class="info__title">住所</dt>
+                <dd class="info__content">
+                  〒933-0014<br>
+                  富山県高岡市野村177-2
+                </dd>
+              </div>
+              <div class="info__row">
+                <dt class="info__title">電話</dt>
+                <dd class="info__content">00-9629-8646</dd>
+              </div>
+              <div class="info__row">
+                <dt class="info__title">営業時間</dt>
+                <dd class="info__content">11:00 ~ 23:00 (L.O. 22:30)</dd>
+              </div>
+              <div class="info__row">
+                <dt class="info__title">定休日</dt>
+                <dd class="info__content">毎週火曜日</dd>
+              </div>
+              <div class="info__row">
+                <dt class="info__title">席数</dt>
+                <dd class="info__content">
+                  <div class="seat-row">
+                    <p class="seat__area">洋風の空間</p>
+                    <p class="seat__num">
+                      テーブル26席(8卓)<!--
+                   --><span class="slash bp-min600-show">/</span><br class="bp-min600-hide"><!--
+                   -->カウンター8席
+                    </p>
+                  </div>
+                  <div class="seat-row">
+                    <p class="seat__area">和風の空間</p>
+                    <p class="seat__num">テーブル28席(8卓)</p>
+                  </div>
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </article>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="container">
+        <div class="wrapper">
+          <img class="logo" src="../image/logo-white.png" loading="lazy">
+          <ul class="sns">
+            <li class="sns__item">
+              <a href="">
+                <img class="sns__icon" src="../image/icon-x.png" loading="lazy">
+                X (Twitter)
+              </a>
+            </li>
+            <li class="sns__item">
+              <a href="">
+                <img class="sns__icon" src="../image/icon-instagram.png" loading="lazy">
+                Instagram
+              </a>
+            </li>
+          </ul>
+        </div>
+        <p class="my-copyright">&copy; KawaguchiShokudo All right reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>
