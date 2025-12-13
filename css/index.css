@@ -865,8 +865,6 @@ a {
   justify-content: center;
   gap     : 5vw;
   height  : 3rem;
-
-  border: solid 1px white;
 }
 .footer .logo {
   height    : 100%;
@@ -882,20 +880,16 @@ a {
   align-items : center;
   height      : 50%;
   font-size   : 0.8rem;
-  border: solid 1px blue;
 }
 .footer a {
   display: flex;
   align-items: center;
 }
 .footer .sns__icon {
-  /* height      : 100%; */
   margin-right: 4px;
   object-fit  : cover;
-
   aspect-ratio: 1 / 1;
-  width: 16px;
-  border: solid 1px red;
+  height: 16px;
 }
 .footer .my-copyright {
   font-size : 0.6rem;
