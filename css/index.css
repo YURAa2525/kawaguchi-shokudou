@@ -892,9 +892,8 @@ a {
   margin-right: 4px;
   object-fit  : cover;
 
-  aspect-ratio: 1 / 1;
+  width: 16px;
   border: solid 1px red;
-  display: none;
 }
 .footer .my-copyright {
   font-size : 0.6rem;
