@@ -874,6 +874,7 @@ a {
   height    : 100%;
   object-fit: cover;
 
+  display: none;
   border: solid 1px orange;
 }
 .footer .sns {
@@ -892,13 +893,12 @@ a {
 
   border: solid 1px blue;
 }
-.footer a {
-  display: block;
-}
 .footer .sns__icon {
   height      : 100%;
   margin-right: 4px;
   object-fit  : cover;
+
+  display: none;
 }
 .footer .my-copyright {
   font-size : 0.6rem;
