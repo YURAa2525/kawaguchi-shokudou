@@ -870,7 +870,7 @@ a {
   border: solid 1px white;
 }
 .footer .logo {
-  width     : fit-content;
+  /* width     : fit-content; */
   height    : 100%;
   object-fit: cover;
 
