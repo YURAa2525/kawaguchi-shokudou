@@ -870,20 +870,13 @@ a {
   border: solid 1px white;
 }
 .footer .logo {
-  /* width     : fit-content; */
   height    : 100%;
   object-fit: cover;
-
-  /* width: 20px; */
-  /* display: none; */
-  border: solid 1px orange;
 }
 .footer .sns {
   display: flex;
   flex-direction: column;
   padding-top   : 4px;
-
-  border: solid 1px red;
 }
 .footer .sns__item {
   display     : flex;
@@ -899,7 +892,7 @@ a {
   margin-right: 4px;
   object-fit  : cover;
 
-  display: none;
+  border: solid 1px red;
 }
 .footer .my-copyright {
   font-size : 0.6rem;
