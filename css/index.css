@@ -894,6 +894,7 @@ a {
 
   aspect-ratio: 1 / 1;
   border: solid 1px red;
+  display: none;
 }
 .footer .my-copyright {
   font-size : 0.6rem;
