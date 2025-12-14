@@ -204,7 +204,7 @@ function modalManage() {
 
       // ｳｲﾝﾄﾞｳｽｸﾛｰﾙの禁止
       document.addEventListener("wheel", prevent, {passive: false});
-      document.addEventListener("scroll", prevent, {passive: false});
+      document.addEventListener("touchmove", prevent, {passive: false});
     });
   }
 
@@ -244,7 +244,7 @@ function modalManage() {
 
       // ｳｲﾝﾄﾞｳｽｸﾛｰﾙを許可
       document.removeEventListener("wheel", prevent, {passive: false});
-      document.removeEventListener("scroll", prevent, {passive: false});
+      document.removeEventListener("touchmove", prevent, {passive: false});
     });
   }
 }
