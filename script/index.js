@@ -204,6 +204,7 @@ function modalManage() {
 
       // ｳｲﾝﾄﾞｳｽｸﾛｰﾙの禁止
       document.addEventListener("wheel", prevent, {passive: false});
+      document.addEventListener("scroll", prevent, {passive: false});
     });
   }
 
@@ -243,6 +244,7 @@ function modalManage() {
 
       // ｳｲﾝﾄﾞｳｽｸﾛｰﾙを許可
       document.removeEventListener("wheel", prevent, {passive: false});
+      document.removeEventListener("scroll", prevent, {passive: false});
     });
   }
 }
@@ -369,12 +371,11 @@ function min816Move() {
 
 // ----------------------------------------------
 // js-msg のﾄﾞﾗｯｸﾞ
-// > pc用のため pointerdown ではなく、mousedown で pc用だと明示
 // ----------------------------------------------
 function dragImg() {
   const zIndex = parseInt($(".js-drag").css("z-index"), 10);
 
-  $(".wide-bg").on("mousedown", ".js-drag", function(eDown) {
+  $(".wide-bg").on("pointerdown", ".js-drag", function(eDown) {
     const $el   = $(this);
     const diffX = eDown.clientX - $el.position().left;
     const diffY = eDown.clientY - $el.position().top;
@@ -385,7 +386,7 @@ function dragImg() {
     // ﾌﾞﾗｳｻﾞの画像選択ﾓｰﾄﾞをｷｬﾝｾﾙ (css の user-select は img ﾀｸﾞには効かない)
     eDown.preventDefault();
 
-    $(window).on("mousemove.drag", function(eMove) {
+    $(window).on("pointermove.drag", function(eMove) {
       const moveX = eMove.clientX - diffX;
       const moveY = eMove.clientY - diffY;
 
@@ -395,7 +396,7 @@ function dragImg() {
       });
     });
 
-    $(window).on("mouseup.drag", function() {
+    $(window).on("pointerup.drag", function() {
       $(window).off(".drag");
     });
   });
